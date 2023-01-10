@@ -52,8 +52,17 @@ class AboutPage extends StatelessWidget {
                     height: 40.0,
                   ),
                   Container(
-                      width: 500.0,
-                      child: SmallText(title: 'Hello! My Name is Shahab Mustafa,I From Charsadda.I am Flutter and Full Stack Web Developer.\nMy Education Second year.I started Associated Degree on Jinnah College Peshawar ')),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [
+                            Colors.redAccent,
+                            Colors.white
+                          ]
+                      ),
+                    ),
+                    child: Text('Hello! I am Shahab Mustafa',style: TextStyle(
+                    ),),
+                  ),
                   const SizedBox(
                     height: 40.0,
                   ),

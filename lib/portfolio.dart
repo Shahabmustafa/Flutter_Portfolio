@@ -4,11 +4,10 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:porfolio/Pages/about_page.dart';
 import 'package:porfolio/Pages/certificate.dart';
 import 'package:porfolio/Pages/contact.dart';
+import 'package:porfolio/Pages/drawer.dart';
 import 'package:porfolio/Pages/home_page.dart';
 import 'package:porfolio/Pages/projects.dart';
 import 'package:porfolio/Pages/skill_page.dart';
-import 'package:porfolio/widgets/custom_button.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({Key? key}) : super(key: key);
@@ -18,49 +17,39 @@ class Portfolio extends StatefulWidget {
 }
 
 class _PortfolioState extends State<Portfolio> {
-  @override
+
+  // bool isDesktop(BuildContext context) =>
+  // MediaQuery.of(context).size.width > 600;
+  //
+  // bool isMobile(BuildContext context) =>
+  //     MediaQuery.of(context).size.width < 600;
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: const [
-                Text('Shahab Mustafa'),
-              ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text('Shahab',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white
+            ),),
+            SizedBox(
+              width: 5.0,
             ),
-            Row(
-              children: [
-                CustomButton(title: 'Home',
-                    onTap: (){
-                }),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CustomButton(title: 'About', onTap: (){}),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CustomButton(title: 'Skills', onTap: (){}),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CustomButton(title: 'Projects', onTap: (){}),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CustomButton(title: 'Certifcatet', onTap: (){}),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CustomButton(title: 'Contact', onTap: (){}),
-              ],
-            ),
+            Text('Mustafa',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.redAccent,
+            ),),
+
           ],
-        ),
+        )
       ),
+      drawer: DrawerPage(),
       backgroundColor: Colors.black,
       body: ListView.builder(
         itemCount: 1,
@@ -84,8 +73,12 @@ class _PortfolioState extends State<Portfolio> {
                 ),
               ),
           );
-          }
-          ),
+          },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.arrow_upward_rounded),
+      ),
     );
   }
 }

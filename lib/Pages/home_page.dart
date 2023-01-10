@@ -25,7 +25,22 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   width: 30.0,
                 ),
-                LargText(title: 'I am Shahab Mustafa'),
+                Column(
+                  children: [
+                    LargText(title: 'I am Shahab Mustafa'),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    const Text('Flutter and Full Stack Web Developer',
+                      style: TextStyle(
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        letterSpacing: 8,
+                      ),
+                    ),
+                  ],
+                ),
                 // Row(
                 //   mainAxisSize: MainAxisSize.min,
                 //   children: <Widget>[
